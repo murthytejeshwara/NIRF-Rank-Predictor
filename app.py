@@ -9,10 +9,10 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 scaling = MinMaxScaler()
-pr = pickle.load(open('C:/Users/Tejeshwara/Desktop/poly_reg.pkl', 'rb'))
+pr = pickle.load(open('poly_reg.pkl', 'rb'))
 poly_reg=PolynomialFeatures(degree=4)
 #read data and normalise
-pred_df = pd.read_csv('C:/Users/Tejeshwara/Desktop/2020RankingEngg.csv')
+pred_df = pd.read_csv('2020RankingEngg.csv')
 pred_df = pred_df.head(100)
 pred_df[['TLR (100)', 'RPC (100)', 'GO (100)', 'OI (100)', 'PERCEPTION (100)']] = scaling.fit_transform(pred_df[['TLR (100)', 'RPC (100)', 'GO (100)', 'OI (100)', 'PERCEPTION (100)']])
 
